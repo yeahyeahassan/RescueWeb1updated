@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the URRT Team - Advisors, Directors, and Sub-Team Members">
+    <meta name="keywords" content="URRT team, robotics team members, UIU rover team, advisors, mechanical team, software team">
+    <link rel="icon" href="images/umrt_logo.ico" type="image/x-icon">
+    <title>Our Team - URRT</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --dark: #0a0a1a;
+            --light: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark);
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(11, 15, 25, 0.9) 0%, rgba(29, 7, 47, 0.9) 100%);
+        }
+        
+        .team-card:hover .team-img {
+            transform: scale(1.05);
+        }
+        
+        .team-img {
+            transition: transform 0.5s ease;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Back to Home Button */
+        .back-home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-home-btn:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateX(-5px);
+        }
+        
+        /* Team Page Specific Styles */
+        .advisor-card {
+            transition: all 0.3s ease;
+        }
+        
+        .advisor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        
+        /* Contact Form Styles */
+        .contact-form-input {
+            width: 100%;
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .team-img-container {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-home-btn" data-aos="fade-right">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-32 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">MEET OUR TEAM</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                The brilliant minds behind UIU Rescue Rover Team - Innovators, Engineers, and Visionaries
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#advisors" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                    Our Advisors
+                </a>
+                <a href="#director" class="px-6 py-3 border border-blue-500 text-blue-400 rounded-full font-medium hover:bg-blue-900 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105">
+                    Director
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 px-4 sm:px-6 lg:px-8 bg-black bg-opacity-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Our Team</h2>
+            
+            <!-- Advisors Section -->
+            <div id="advisors" class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-center gradient-text" data-aos="fade-up">Advisors</h3>
+                <div class="flex flex-col gap-8">
+
+                    <!-- Advisor 1 -->
+                    <div class="bg-gray-900 bg-opacity-70 p-8 rounded-xl border border-gray-800 card-hover" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                            <!-- Bigger rectangular image - Fixed to show full image -->
+                            <div class="team-img overflow-hidden rounded-xl w-80 h-56 border-4 border-blue-500 shadow-lg bg-gray-800 flex items-center justify-center">
+                                <img src="images/abul-kashem-VC-UIU.jpg" alt="Prof Dr. Md. Abul Kashem Mia" 
+                                     class="w-full h-full object-contain transition-transform duration-300 hover:scale-105">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-bold text-white mb-2">Prof Dr. Md. Abul Kashem Mia</h4>
+                                <p class="text-blue-400 text-lg font-semibold mb-3">Team Chief-Advisor</p>
+                                <p class="text-gradient-to-r from-blue-400 to-purple-400 text-lg mb-4">Vice-Chancellor in Charge & Professor, United International University</p>
+                                <div class="mb-4">
+                                    <a href="mailto:kashem@uiu.ac.bd" class="text-blue-300 hover:text-blue-200 flex items-center gap-2 transition-colors">
+                                        <i data-feather="mail" class="w-4 h-4"></i>
+                                        kashem@uiu.ac.bd
+                                    </a>
+                                </div>
+                                <div class="mb-4">
+                                    <h5 class="text-blue-300 font-semibold mb-2">Research Interests:</h5>
+                                    <p class="text-gray-300">
+                                        Algorithm Theory, Graph Theory and Algorithms, Computational Complexity, Bioinformatics
+                                    </p>
+                                </div>
+                                <div class="flex space-x-4 pt-2">
+                                    <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors social-icon" aria-label="LinkedIn Profile">
+                                        <i data-feather="linkedin" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="mailto:kashem@uiu.ac.bd" class="text-blue-400 hover:text-blue-300 transition-colors social-icon" aria-label="Send Email">
+                                        <i data-feather="mail" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors social-icon" aria-label="University Profile">
+                                        <i data-feather="user" class="w-5 h-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advisor 2 -->
+                    <div class="bg-gray-900 bg-opacity-70 p-8 rounded-xl border border-gray-800 card-hover" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                            <!-- Bigger rectangular image - Fixed to show full image -->
+                            <div class="team-img overflow-hidden rounded-xl w-80 h-56 border-4 border-blue-500 shadow-lg bg-gray-800 flex items-center justify-center">
+                                <img src="images/Dr.-Hasan-Sarwar.jpg" alt="Prof Dr. Sarwar Hassan" 
+                                     class="w-full h-full object-contain transition-transform duration-300 hover:scale-105">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-bold text-white mb-2">Prof Dr. Sarwar Hassan</h4>
+                                <p class="text-blue-400 text-lg font-semibold mb-3">Team Advisor</p>
+                                <p class="text-gradient-to-r from-blue-400 to-purple-400 text-lg mb-4">Professor, United International University</p>
+                                <div class="mb-4">
+                                    <a href="mailto:sarwar@cse.uiu.ac.bd" class="text-blue-300 hover:text-blue-200 flex items-center gap-2 transition-colors">
+                                        <i data-feather="mail" class="w-4 h-4"></i>
+                                        sarwar@cse.uiu.ac.bd
+                                    </a>
+                                </div>
+                                <div class="mb-4">
+                                    <h5 class="text-blue-300 font-semibold mb-2">Research Interests:</h5>
+                                    <p class="text-gray-300">
+                                        Software Engineering, Health Engineering, Education Data Mining, Bangla OCR, 
+                                        Nanomaterial Development, Blockchain
+                                    </p>
+                                </div>
+                                <div class="flex space-x-4 pt-2">
+                                    <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors social-icon" aria-label="LinkedIn Profile">
+                                        <i data-feather="linkedin" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="mailto:sarwar@cse.uiu.ac.bd" class="text-blue-400 hover:text-blue-300 transition-colors social-icon" aria-label="Send Email">
+                                        <i data-feather="mail" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors social-icon" aria-label="University Profile">
+                                        <i data-feather="user" class="w-5 h-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Director -->
+            <div id="director" class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-center gradient-text" data-aos="fade-up">Director</h3>
+                <div class="max-w-3xl mx-auto bg-gray-900 bg-opacity-70 p-8 rounded-xl border border-gray-800 card-hover" data-aos="zoom-in">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                        
+                        <!-- Bigger rectangular image -->
+                        <div class="team-img overflow-hidden rounded-xl w-80 h-56 border-4 border-gradient-to-r from-blue-500 to-purple-600">
+                            <img src="images/abid.jpg" alt="Director" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <div class="text-center md:text-left">
+                            <h4 class="text-2xl font-bold">Md. Abid Hossain</h4>
+                            <p class="text-gradient-to-r from-blue-400 to-purple-400 mb-4">Lecturer, United International University</p>
+                            <p><a href="mailto:abid@cse.uiu.ac.bd" class="text-blue-300 hover:text-blue-200">abid@cse.uiu.ac.bd</a></p>
+                            <p class="text-gray-300 mb-4">
+                                <b>Interests Include:</b> Robotics & Electrical Systems, Drone, Design and Manufacturing, Electrical Engineering, Machine Learning
+                            </p>
+                            
+                            <div class="flex justify-center md:justify-start space-x-4">
+                                <a href="#" class="text-blue-400 hover:text-blue-300 social-icon">
+                                    <i data-feather="linkedin" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="text-purple-400 hover:text-purple-300 social-icon">
+                                    <i data-feather="twitter" class="w-5 h-5"></i>
+                                </a>
+                                <a href="#" class="text-blue-400 hover:text-blue-300 social-icon">
+                                    <i data-feather="mail" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 bg-black bg-opacity-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Contact Us</h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Contact Info & Map -->
+                <div class="lg:col-span-2 grid md:grid-cols-2 gap-8">
+                    <!-- Contact Information -->
+                    <div class="space-y-8" data-aos="fade-right">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 gradient-text">Get In Touch</h3>
+                            <p class="text-gray-300 mb-6">Have questions about our team or want to collaborate? Reach out to us through any of the channels below.</p>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- Email -->
+                            <div class="flex items-start group cursor-pointer">
+                                <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl mr-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+                                    <i class="fas fa-envelope w-6 h-6 text-white"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-white mb-1">Email</h4>
+                                    <p class="text-gray-400 group-hover:text-blue-300 transition-colors">marsrover@uiu.ac.bd</p>
+                                    <p class="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="flex items-start group cursor-pointer">
+                                <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-3 rounded-xl mr-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/25">
+                                    <i class="fas fa-phone w-6 h-6 text-white"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-white mb-1">Phone</h4>
+                                    <p class="text-gray-400 group-hover:text-purple-300 transition-colors">+880 1796-992356</p>
+                                    <p class="text-sm text-gray-500 mt-1">Mon-Fri, 9AM-5PM</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Address -->
+                            <div class="flex items-start group cursor-pointer">
+                                <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl mr-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/25">
+                                    <i class="fas fa-map-marker-alt w-6 h-6 text-white"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-white mb-1">Address</h4>
+                                    <p class="text-gray-400 group-hover:text-blue-300 transition-colors">United International University</p>
+                                    <p class="text-sm text-gray-500 mt-1">Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-white mb-4">Follow Our Journey</h4>
+                            <div class="flex space-x-3">
+                                <a href="#" class="social-icon bg-gradient-to-br from-blue-600 to-blue-700 p-3 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+                                    <i class="fab fa-facebook-f w-5 h-5 text-white"></i>
+                                </a>
+                                <a href="#" class="social-icon bg-gradient-to-br from-blue-400 to-blue-500 p-3 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-400/25">
+                                    <i class="fab fa-twitter w-5 h-5 text-white"></i>
+                                </a>
+                                <a href="#" class="social-icon bg-gradient-to-br from-purple-500 to-pink-500 p-3 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25">
+                                    <i class="fab fa-instagram w-5 h-5 text-white"></i>
+                                </a>
+                                <a href="#" class="social-icon bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25">
+                                    <i class="fab fa-linkedin-in w-5 h-5 text-white"></i>
+                                </a>
+                                <a href="#" class="social-icon bg-gradient-to-br from-red-500 to-red-600 p-3 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/25">
+                                    <i class="fab fa-youtube w-5 h-5 text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Map -->
+                    <div class="relative" data-aos="fade-left">
+                        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-700 h-full">
+                            <h3 class="text-xl font-bold mb-4 text-white">Visit Our Campus</h3>
+                            <div class="map-container relative bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-xl overflow-hidden border border-gray-600 h-64 mb-4">
+                                <!-- Embedded Google Maps -->
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.598346556767!2d90.42461497504862!3d23.79810607863617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7b33c7b87cd%3A0x8c3881b66eeb7e0c!2sUnited%20International%20University!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="rounded-lg">
+                                </iframe>
+                            </div>
+                            
+                            <div class="space-y-2 text-sm text-gray-300">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-signs text-blue-400 mr-2"></i>
+                                    <span>United City, Madani Avenue, Badda, Dhaka 1212</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock text-purple-400 mr-2"></i>
+                                    <span>Open: Sunday - Thursday, 8:00 AM - 8:00 PM</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-building text-green-400 mr-2"></i>
+                                    <span>CAIR Lab: 4th Floor, Academic Building</span>
+                                </div>
+                            </div>
+                            
+                            <a href="https://maps.app.goo.gl/CwgAxRgJQgHv7Vjq8" target="_blank" class="w-full mt-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 no-underline">
+                                <i class="fas fa-directions"></i>
+                                <span>Open in Google Maps</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div data-aos="fade-up">
+                    <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Send Us a Message</h3>
+                        
+                        <form class="space-y-6" id="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name" class="block text-sm font-medium mb-2 text-gray-300">Full Name</label>
+                                <div class="relative">
+                                    <input type="text" id="contact-name" class="contact-form-input" placeholder="Enter your name" required>
+                                    <div class="absolute right-3 top-3 text-gray-400">
+                                        <i class="fas fa-user w-5 h-5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-email" class="block text-sm font-medium mb-2 text-gray-300">Email Address</label>
+                                <div class="relative">
+                                    <input type="email" id="contact-email" class="contact-form-input" placeholder="your.email@example.com" required>
+                                    <div class="absolute right-3 top-3 text-gray-400">
+                                        <i class="fas fa-envelope w-5 h-5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-subject" class="block text-sm font-medium mb-2 text-gray-300">Subject</label>
+                                <div class="relative">
+                                    <select id="contact-subject" class="contact-form-input appearance-none" required>
+                                        <option value="" class="bg-gray-800">Select a subject</option>
+                                        <option value="team-inquiry" class="bg-gray-800">Team Inquiry</option>
+                                        <option value="collaboration" class="bg-gray-800">Collaboration</option>
+                                        <option value="recruitment" class="bg-gray-800">Recruitment</option>
+                                        <option value="technical" class="bg-gray-800">Technical Inquiry</option>
+                                        <option value="other" class="bg-gray-800">Other</option>
+                                    </select>
+                                    <div class="absolute right-3 top-3 text-gray-400 pointer-events-none">
+                                        <i class="fas fa-chevron-down w-5 h-5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message" class="block text-sm font-medium mb-2 text-gray-300">Message</label>
+                                <div class="relative">
+                                    <textarea id="contact-message" rows="5" class="contact-form-input resize-none" placeholder="Tell us about your inquiry..." required></textarea>
+                                    <div class="absolute right-3 top-3 text-gray-400">
+                                        <i class="fas fa-edit w-5 h-5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 flex items-center justify-center space-x-2 group">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-90 py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:order-2 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-sm text-gray-400">
+                        &copy; 2023 URRT - UIU Rescue Rover Team. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Initialize Feather icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value,
+                subject: document.getElementById('contact-subject').value,
+                message: document.getElementById('contact-message').value
+            };
+            
+            // Here you would typically send the data to your backend
+            console.log('Team page form submitted:', formData);
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Skip if it's an external link
+                if (href === '#' || href.includes('.html')) return;
+                
+                e.preventDefault();
+                
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
